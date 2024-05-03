@@ -1,0 +1,17 @@
+# data
+*.nc
+*.nc4
+*.pq
+*.csv
+*.tif
+*.png
+
+# notebooks
+.ipynb_checkpoints
+
+# build
+__pycache__
+
+# editor and OS
+.DS_Store
+.vscode
