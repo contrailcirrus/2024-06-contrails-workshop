@@ -10,9 +10,9 @@
 
 > Presentation listing to come
 
-## Workshops
+## Labs
 
 > 2024 June 20
 
-> Workshops listing to come
+> Labs listing to come
 
