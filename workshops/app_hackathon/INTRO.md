@@ -122,16 +122,16 @@ as visualized in the [Google Contrail Explorer](https://contrails.webapps.google
 | geometry  | GEOGRAPHY |
 
 ### GOES imagery
-See the [`Render GOES.ipynb`](./goes_mesoscale/Render%GOES/Render%20GOES.ipynb) notebook
+See the [`Render GOES.ipynb`](./references/Render%20GOES/Render%20GOES.ipynb) notebook
 for an example of how to pull GOES satellite imagery that co-occurs with a target image.
 
 ### GOES Mesoscale imagery
 Some of the ObserverApp images co-occur with imagery captured by the GOES Mesocale satellites.
 
-The [`goes_mesoscale_ids.json`](./goes_mesoscale/goes_mesocale_ids.json) file
+The [`goes_mesoscale_ids.json`](references/Render GOES Mesoscale/goes_mesocale_ids.json) file
 itemizes those images that fall under view of the GOES Mesocale sats. 
 The `"regions"` field indicates if the image falls in the GOES Mesoscale M1 or M2 regions.
 
-See the [`Render GOES Mesoscale.ipynb`](./references/Render%20GOES%20Mesoscale.ipynb) notebook
+See the [`Render GOES Mesoscale.ipynb`](./references/Render%20GOES%20Mesoscale/Render%20GOES%20Mesoscale.ipynb) notebook
 for an example of how to pull down and render GOES Mesoscale imagery that co-occurs with a target image.
 
