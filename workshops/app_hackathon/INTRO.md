@@ -31,6 +31,18 @@ For BigQuery access, please send an email to:
 
 ### Get Started
 
+--------
+
+### How to Contribute
+If you would like to contribute your work at the end of this lab, please:
+
+1. create a new branch on this repo: `/hackathon/<my_lastname>`
+2. create a directory for your work: `workshop/app_hackathon/contributions/<my_lastname>_<title>`
+3. add your notebook, scripts and any supporting files into your directory
+4. open a pull-request to merge your work into `main`, and tag `contrails-internal` as reviewer
+
+We promise to promptly review all proposed contributions.
+
 ---------
 
 ### Data Dictionary
@@ -108,6 +120,10 @@ as visualized in the [Google Contrail Explorer](https://contrails.webapps.google
 |-----------|-----------|
 | timestamp | TIMESTAMP |
 | geometry  | GEOGRAPHY |
+
+### GOES imagery
+See the [`Render GOES.ipynb`](./goes_mesoscale/Render%GOES/Render%20GOES.ipynb) notebook
+for an example of how to pull GOES satellite imagery that co-occurs with a target image.
 
 ### GOES Mesoscale imagery
 Some of the ObserverApp images co-occur with imagery captured by the GOES Mesocale satellites.
