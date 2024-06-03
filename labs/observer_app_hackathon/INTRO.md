@@ -1,5 +1,20 @@
 ## Lab 2a | ObserverApp Hackathon
 
+<!-- TOC -->
+  * [Lab 2a | ObserverApp Hackathon](#lab-2a--observerapp-hackathon)
+    * [Abstract](#abstract)
+    * [How to Contribute](#how-to-contribute)
+    * [Data Dictionary](#data-dictionary)
+    * [images](#images)
+      * [image metadata](#image-metadata)
+      * [image field-of-view](#image-field-of-view)
+    * [ADS-B aircraft waypoints](#ads-b-aircraft-waypoints)
+    * [PyContrails CoCip Regions](#pycontrails-cocip-regions)
+    * [Google GOES contrail detections](#google-goes-contrail-detections)
+    * [GOES imagery](#goes-imagery)
+    * [GOES Mesoscale imagery](#goes-mesoscale-imagery)
+<!-- TOC -->
+
 ### Abstract
 Do you love geospatial datasets, viz and all things contrails? Then suit up for a great hackathon!
 
