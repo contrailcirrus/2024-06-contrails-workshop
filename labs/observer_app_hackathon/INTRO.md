@@ -60,7 +60,7 @@ We promise to promptly review all proposed contributions.
 ### Data Dictionary
 
 ### images
-The image files themselves can be found a public Google Cloud Storage bucket: `gs://2024-06-contrails-workshop/contrails_observerapp/images/*`.
+The image files themselves can be found a public Google Cloud Storage bucket: `gs://2024-06-contrails-workshop/observerapp_hackathon/images/*`.
 
 The filenames reflect the `id` field in the BigQuery image tables.
 
