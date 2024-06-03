@@ -10,9 +10,9 @@ a mobile phone app for community-generated observations of contrails.
 Curated datasets include:
 - Contrail App images *(where people see contrails!)*
 - ADS-B waypoints *(where the airplanes are at!)*
-- GOES mesocale images *(where satellites are snapping pics!)*
-- GOES contrail-detections *(where satellites+computer vision see contrails!)*
 - PyContrails CoCip polygons *(where we expect contrails should be!)*
+- GOES contrail-detections *(where satellites+computer vision see contrails!)*
+- GOES mesocale images *(where satellites are snapping pics!)*
 
 What you'll need:
 - a computer with dev environment of your choice
@@ -110,6 +110,29 @@ Schema:
 | aircraft_type_icao | STRING    |
 | airline_iata       | STRING    |
 
+### PyContrails CoCip Regions
+A BigQuery table with polygon geometries at standard flight levels,
+indicating regions where contrails are predicted to have formed with an energy forcing value
+relative to a given threshold.
+
+Thresholds are in units of `[J/m]` ([read more here](https://apidocs.contrails.org/ef-interpretation.html)).
+A regions with a positive threshold indicates a geography where contrails are expected to have a warming impact
+equal or greater than the positive threshold value.
+A region with negative threshold indicates a geography where contrails are expected to have a cooling impact
+equal or less than the negative threshold value.
+
+Table: `contrails-301217.workshop_observerapp.cocip_regions`
+
+Schema:
+
+| field             | type      |
+|-------------------|-----------|
+| timestamp         | TIMESTAMP |
+| hres_model_run_at | TIMESTAMP |
+| flight_level      | INTEGER   |
+| threshold         | INTEGER   |
+| regions           | GEOGRAPHY |
+
 ### Google GOES contrail detections
 A BigQuery table with line-string geometry objects, 
 each line-string geometry object representing a contrail object as predicted by Google's
@@ -134,4 +157,3 @@ The `"regions"` field indicates if the image falls in the GOES Mesoscale M1 or M
 
 See the [`Render GOES Mesoscale.ipynb`](./references/Render%20GOES%20Mesoscale/Render%20GOES%20Mesoscale.ipynb) notebook
 for an example of how to pull down and render GOES Mesoscale imagery that co-occurs with a target image.
-
