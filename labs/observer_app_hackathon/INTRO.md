@@ -13,6 +13,7 @@
     * [Google GOES contrail detections](#google-goes-contrail-detections)
     * [GOES imagery](#goes-imagery)
     * [GOES Mesoscale imagery](#goes-mesoscale-imagery)
+    * [Perspective Correction](#perspective-correction)
 <!-- TOC -->
 
 ### Abstract
@@ -163,7 +164,7 @@ as visualized in the [Google Contrail Explorer](https://contrails.webapps.google
 | geometry  | GEOGRAPHY |
 
 ### GOES imagery
-See the [`Render GOES.ipynb`](./references/Render%20GOES/Render%20GOES.ipynb) notebook
+See the [`GOES Examples.ipynb`](./references/goes/GOES%20Examples.ipynb) notebook
 for an example of how to pull GOES satellite imagery that co-occurs with a target image.
 
 ### GOES Mesoscale imagery
@@ -175,5 +176,15 @@ The [`goes_mesoscale_ids.json`](references/render_goes_mesoscale/goes_mesocale_i
 itemizes those images that fall under view of the GOES Mesocale sats. 
 The `"regions"` field indicates if the image falls in the GOES Mesoscale M1 or M2 regions.
 
-See the [`Render GOES Mesoscale.ipynb`](./references/Render%20GOES%20Mesoscale/Render%20GOES%20Mesoscale.ipynb) notebook
-for an example of how to pull down and render GOES Mesoscale imagery that co-occurs with a target image.
+The [`GOES Examples.ipynb`](./references/goes/GOES%20Examples.ipynb) notebook
+also contrails an example of how to pull down and render GOES Mesoscale imagery that co-occurs with a target image.
+
+### Perspective Correction
+One important detail to not overlook is the effect of perspective correction on
+contrails (and clouds) that are captured in GOES imagery.  Because the satellite
+is viewing the Earth at oblique angles (except at one point on the equator),
+objects that are off of the ground will appear shifted in the GOES image. 
+
+This is discussed in greater detail in the [`GOES
+Examples.ipynb`](./references/goes/GOES%20Examples.ipynb) notebook, where we
+also give an example of how to correct for this effect. 
