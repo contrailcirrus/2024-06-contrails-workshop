@@ -102,6 +102,8 @@ Schema:
 | geometry | GEOMETRY |
 | level    | INTEGER  |
 
+An example of how this data was generated can be found in [this notebook](./references/field_of_view_polygons/Find%20FL%20Polygons.ipynb).
+
 ### ADS-B aircraft waypoints
 A BigQuery table with global flight traffic waypoints, with waypoints (one per minute) for all commercial aircrafts.
 
