@@ -133,6 +133,12 @@ equal or greater than the positive threshold value.
 A region with negative threshold indicates a geography where contrails are expected to have a cooling impact
 equal or less than the negative threshold value.
 
+The regions in this table do not overlap spatiotemoporally with all images in this lab.
+Instead, please see the [regions_ids.json](references/cocip_regions/regions_ids.json) file
+for image ids that have at least 4 hours of CoCip region prediction prior to image timestamps.
+These images are a subset of the images for which there is also GOES Mesoscale imagery available 
+(See the [GOES Mesoscale Imagery](#goes-mesoscale-imagery) section).
+
 Table: `contrails-301217.workshop_observerapp.cocip_regions`
 
 Schema:
@@ -163,7 +169,7 @@ for an example of how to pull GOES satellite imagery that co-occurs with a targe
 ### GOES Mesoscale imagery
 Some of the ObserverApp images co-occur with imagery captured by the GOES Mesocale satellites.
 
-The [`goes_mesoscale_ids.json`](references/Render GOES Mesoscale/goes_mesocale_ids.json) file
+The [`goes_mesoscale_ids.json`](references/render_goes_mesoscale/goes_mesocale_ids.json) file
 itemizes those images that fall under view of the GOES Mesocale sats. 
 The `"regions"` field indicates if the image falls in the GOES Mesoscale M1 or M2 regions.
 
