@@ -30,10 +30,6 @@ For BigQuery access, please send an email to:
 
 --------
 
-### Get Started
-
---------
-
 ### How to Contribute
 If you would like to contribute your work at the end of this lab, please:
 
