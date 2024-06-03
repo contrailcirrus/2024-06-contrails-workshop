@@ -27,7 +27,7 @@ Curated datasets include:
 - ADS-B waypoints *(where the airplanes are at!)*
 - PyContrails CoCip polygons *(where we expect contrails should be!)*
 - GOES contrail-detections *(where satellites+computer vision see contrails!)*
-- GOES mesocale images *(where satellites are snapping pics!)*
+- GOES full-disk and mesocale images *(where satellites are snapping pics!)*
 
 What you'll need:
 - a computer with dev environment of your choice
@@ -167,7 +167,9 @@ See the [`Render GOES.ipynb`](./references/Render%20GOES/Render%20GOES.ipynb) no
 for an example of how to pull GOES satellite imagery that co-occurs with a target image.
 
 ### GOES Mesoscale imagery
-Some of the ObserverApp images co-occur with imagery captured by the GOES Mesocale satellites.
+Some of the ObserverApp images co-occur with imagery captured by the GOES
+Mesocale regions. There regions are captured with a time resolution of one
+minute rather than the standard ten minute resolution.
 
 The [`goes_mesoscale_ids.json`](references/render_goes_mesoscale/goes_mesocale_ids.json) file
 itemizes those images that fall under view of the GOES Mesocale sats. 
