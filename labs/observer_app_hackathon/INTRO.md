@@ -21,6 +21,7 @@ What you'll need:
 
 What you might want:
 - the gcloud command line tool ([gcloud](https://cloud.google.com/sdk/docs/install))
+- familiarity with BigQuery, SQL and BigQuery's [Geography functions](https://cloud.google.com/bigquery/docs/reference/standard-sql/geography_functions)
 
 For BigQuery access, please send an email to:
 > - address: `nick.masson@breakthroughenergy.org`  
