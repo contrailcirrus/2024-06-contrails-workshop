@@ -174,7 +174,7 @@ Some of the ObserverApp images co-occur with imagery captured by the GOES
 Mesocale regions. There regions are captured with a time resolution of one
 minute rather than the standard ten minute resolution.
 
-The [`goes_mesoscale_ids.json`](references/render_goes_mesoscale/goes_mesocale_ids.json) file
+The [`goes_mesoscale_ids.json`](references/goes/goes_mesocale_ids.json) file
 itemizes those images that fall under view of the GOES Mesocale sats. 
 The `"regions"` field indicates if the image falls in the GOES Mesoscale M1 or M2 regions.
 
