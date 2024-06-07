@@ -60,7 +60,7 @@ We promise to promptly review all proposed contributions.
 
 ### Data Dictionary
 
-### images
+#### images
 The image files themselves can be found a public Google Cloud Storage bucket: `gs://2024-06-contrails-workshop/observerapp_hackathon/images/*`.
 
 The filenames reflect the `id` field in the BigQuery image tables.
@@ -104,7 +104,7 @@ Schema:
 
 An example of how this data was generated can be found in [this notebook](./references/field_of_view_polygons/Find%20FL%20Polygons.ipynb).
 
-### ADS-B aircraft waypoints
+#### ADS-B aircraft waypoints
 A BigQuery table with global flight traffic waypoints, with waypoints (one per minute) for all commercial aircrafts.
 
 These data span at least 12 hours prior to each image's `timestamp`.
@@ -125,7 +125,7 @@ Schema:
 | aircraft_type_icao | STRING    |
 | airline_iata       | STRING    |
 
-### PyContrails CoCip Regions
+#### PyContrails CoCip Regions
 A BigQuery table with polygon geometries at standard flight levels,
 indicating regions where contrails are predicted to have formed with an energy forcing value
 relative to a given threshold.
@@ -154,7 +154,7 @@ Schema:
 | threshold         | INTEGER   |
 | regions           | GEOGRAPHY |
 
-### Google GOES contrail detections
+#### Google GOES contrail detections
 A BigQuery table with line-string geometry objects, 
 each line-string geometry object representing a contrail object as predicted by Google's
 computer vision algos applied to GOES satellite imagery, 
@@ -165,11 +165,11 @@ as visualized in the [Google Contrail Explorer](https://contrails.webapps.google
 | timestamp | TIMESTAMP |
 | geometry  | GEOGRAPHY |
 
-### GOES imagery
+#### GOES imagery
 See the [`GOES Examples.ipynb`](./references/goes/GOES%20Examples.ipynb) notebook
 for an example of how to pull GOES satellite imagery that co-occurs with a target image.
 
-### GOES Mesoscale imagery
+#### GOES Mesoscale imagery
 Some of the ObserverApp images co-occur with imagery captured by the GOES
 Mesocale regions. There regions are captured with a time resolution of one
 minute rather than the standard ten minute resolution.
@@ -181,12 +181,81 @@ The `"regions"` field indicates if the image falls in the GOES Mesoscale M1 or M
 The [`GOES Examples.ipynb`](./references/goes/GOES%20Examples.ipynb) notebook
 also contrails an example of how to pull down and render GOES Mesoscale imagery that co-occurs with a target image.
 
-### Perspective Correction
+##### Perspective Correction
 One important detail to not overlook is the effect of perspective correction on
 contrails (and clouds) that are captured in GOES imagery.  Because the satellite
 is viewing the Earth at oblique angles (except at one point on the equator),
-objects that are off of the ground will appear shifted in the GOES image. 
+objects that are off of the ground will appear shifted in the GOES image.
 
-This is discussed in greater detail in the [`GOES
-Examples.ipynb`](./references/goes/GOES%20Examples.ipynb) notebook, where we
-also give an example of how to correct for this effect. 
+The images captured in the Observer App, similarly, are viewing the sky at an angle.
+
+Reconciling these two perspectives onto the planar flight-levels 
+is covered in greater detail in the [`GOES
+Examples.ipynb`](./references/goes/GOES%20Examples.ipynb) notebook.
+
+### References
+In addition to a demo notebook, this repo includes reference notebooks with sample code 
+for a variety of satellite and computer vision work, as well as other useful references in this lab.
+
+#### Computer Vision
+The [computer_vision](references/computer_vision) directory contains two notebooks.
+
+##### Flight-Level Polygons
+First, there is the [Find FL Polygons.ipynb](references/computer_vision/Find%20FL%20Polygons.ipynb)
+notebook, which is reference code for how to take an image and generate intersections between
+the image's field of view and the planar flight levels.
+
+In simplistic terms, we extract the "pose" angle of the camera (the bearing and pitch), which is effectively the vector 
+forming the center of the cone for the field-of-view, then, knowing the camera's focal length,
+we can determine the width (solid angle) of the cone.  This cone is then projected into the sky,
+and intersected with the various planes at standard altitudes ("flight levels").
+The result is set of polygons, each of those polygons existing and co-planar with given flight levels.
+
+It is worth noting that there are several sources of error in generating these projections.
+Some of those sources include:
+- not all camera's have well-calibrated sensors (affecting accuracy of the bearing and pitch measurement)
+- not all camera's report focal length in a standardized way
+
+The `camera_calibration.p` file contains one set of camera calibration coefficients, based on a narrow-angle phone camera lens.
+The `camera_wide.p` file contains a set of coefs for wide angle camera lenses.
+
+#### Flight Trajectories in Images
+The [Plot Flight Trajectory.ipynb](references/computer_vision/Plot%20Flight%20Trajectory.ipynb) notebook
+demonstrates how to take a flight trajectory (sequence of timestamp, lat, lon, altitude pts),
+and project them into the view of an image.
+
+Like the other reference notebook, this includes the trigonometry for reconciling an image's angled view of the sky with
+points known to exist at certain flight-level planes (parallel to earth's surface).
+
+Additionally, this notebook includes same code for cross-referencing an aircraft waypoint (timestamp, lat, lon, altitude),
+with the closes meteorological prediction of wind speed and wind direction.
+
+The result is the ability to plot line objects on the image showing the flight path of an aircraft 
+thru the field of view of an image,
+and, include on each waypoint wind-vanes, showing the wind direction experienced at the waypoint.
+
+#### GOES
+The [GOES Examples.ipynb](references/goes/GOES%20Examples.ipynb) notebook provides example code
+for fetching a GOES image that overlaps with an image's field of view, and, 
+how to parallax correct an image's field-of-view polygon.
+
+Additionally, this notebook does the same for GOES Mesocale images, 
+including how to build an animation of GOES Mesoscle images.
+
+GOES Mesocale satellite imagery is not available over all the regions where we have photographs.
+The [goes_mesocale_ids.json](references/goes/goes_mesocale_ids.json) file is a newline delimited file,
+which itemizes those images that fall under a GOES Mesocale satellite image.
+Additionally, it provides the GOES Mesoscale region (`M1, M2`) 
+which is a necessary known when retrieving the sat imagery.
+
+The GOES satellite data is available at 10 minute intervals, over a large geographic region.
+
+The GOES Mesoscale data is available at 1 minute intervals, over smaller geographic regions.
+
+#### CoCip Regions
+The [regions_id.json](references/cocip_regions/regions_ids.json) in the `cocip_regions` directory
+is a newline delimited JSON file that identifies those images for which we also have spatio-temporally
+co-occurring CoCip predictions in the `cocip_regions` BigQuery table.
+
+It is important to also note that these images are a subset of those images for which we also have GOES Mesoscale data.
+As such, these image ids form the set of images for which we have the most intersection among all our datasets in this lab.
