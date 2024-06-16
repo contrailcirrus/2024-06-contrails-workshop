@@ -376,6 +376,20 @@
 - **Kevin McCloskey, Aarón Sonabend** (Google): _12hr satellite-driven contrail
   flux via causal inference_
 
+  In this talk we discuss a new methodology we are using to estimate contrail
+  top-of-atmosphere flux. Other methods used so far have either depended heavily
+  on simulations, or need to solve the challenging "contrail tracking" problem;
+  the new method doesn't need to do either. We start with an overview of the
+  COllocated Irradiance Network (COIN) that gives shortwave and longwave flux
+  on 10-minute refresh with ~2km pixel size, which is sufficient to observe
+  formation and evolution of contrail radiative forcing. We then show a naive
+  method of estimating warming based on COIN, but note that it does not account
+  for radiative confounders. We pull from the causal inference literature to
+  address radiative confounders, giving first a brief intro example of framing
+  problems with a causal directed acyclic graph. Finally, we outline a series of
+  tests devised using synthetic data that boost confidence in the results of the
+  method.
+
 ## Labs
 
 ### Thursday, June 20, 2024
