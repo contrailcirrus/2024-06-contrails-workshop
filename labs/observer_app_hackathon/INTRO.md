@@ -44,6 +44,15 @@ For BigQuery access, please send an email to:
 > - subject: `Lab2a | BQ access`
 > - body: `<email associated with your google cloud account>`
 
+If you are working in Google Colab notebooks, you will need to authenticate 
+into your personal Google Cloud account.
+
+Add these lines to the top of your notebooks:
+```python
+from google.colab import auth
+auth.authenticate_user(project_id='my_google_cloud_project_id')
+```
+
 --------
 
 ### How to Contribute
