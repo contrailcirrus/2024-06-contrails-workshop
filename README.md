@@ -11,6 +11,8 @@
 
 ## Presentations
 
+> [Presentation files](https://docs.google.com/spreadsheets/d/1h8L0B1NdFxN2QLMOoyag6T0t2Nai98eJdQ-txBO5oSg)
+
 ### Wednesday, June 19, 2024
 
 #### Observation of contrail formation (09:30 - 10:30)
@@ -38,9 +40,9 @@
   prediction models. In this presentation, we will share our experience
   regarding the observation of clouds and contrails from the ground.
 
-  https://www.reuniwatt.com
+  <https://www.reuniwatt.com>
 
-  https://reuniwatt.com/en/wp-content/uploads/sites/3/2023/08/MTI_SEPT2023_SkyImager_for_Contrail_Observation.pdf
+  <https://reuniwatt.com/en/wp-content/uploads/sites/3/2023/08/MTI_SEPT2023_SkyImager_for_Contrail_Observation.pdf>
 
 - **Aaron Sarna** (Google): _Contrail Attribution in Geostationary Satellite
   Imagery_
@@ -121,9 +123,9 @@
   improve our observational capabilities, especially regarding the issue of
   contrail attribution.
 
-  https://youtu.be/DUIoQJUn1YU?si=lDnodF6PhqrCzC-o
+  <https://youtu.be/DUIoQJUn1YU?si=lDnodF6PhqrCzC-o>
 
-  https://youtu.be/6JxqNqtUJQc?si=lgmpSxUWxiT7MpBP
+  <https://youtu.be/6JxqNqtUJQc?si=lgmpSxUWxiT7MpBP>
 
 - **Peter DeBock** (ARPA-E), **Miad Yazdani** (RTX), **Saikat Majumder** (GE):
   _ARPA-E PRE-TRAILS (Predicting Real-time Emissions Technologies Reducing
@@ -134,7 +136,7 @@
   high accuracy. Five teams were funded with diverse approaches to develop and
   demonstrate these technologies.
 
-  https://arpa-e.energy.gov/technologies/exploratory-topics/aviation-contrails
+  <https://arpa-e.energy.gov/technologies/exploratory-topics/aviation-contrails>
 
 #### Evaluating forecasts (13:00 - 14:20)
 
@@ -371,7 +373,7 @@
   single-layer liquid clouds and ice clouds. These cases are being tested with
   new data obtained from EUMETSAT.
 
-  https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL108452
+  <https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GL108452>
 
 - **Kevin McCloskey, Aarón Sonabend** (Google): _12hr satellite-driven contrail
   flux via causal inference_
@@ -419,14 +421,14 @@
   - GOES contrail-detections (where satellites + computer vision see contrails)
   - GOES full-disk and mesocale images (where satellites are collecting imagery)
 
-  https://github.com/contrailcirrus/2024-06-contrails-workshop/blob/main/labs/observer_app_hackathon/INTRO.md
+  <https://github.com/contrailcirrus/2024-06-contrails-workshop/blob/main/labs/observer_app_hackathon/INTRO.md>
 
 - **Seb Eastham** (Imperial), **Tristan Abbott** (BE): _Getting set up with
   APCEMM_
 
   This lab will provide an introduction to simulating contrails using the
   Aircraft Plume Chemistry Emission and Microphysics Model (APCEMM,
-  https://github.com/MIT-LAE/APCEMM), an intermediate-complexity model that aims
+  <https://github.com/MIT-LAE/APCEMM>), an intermediate-complexity model that aims
   to bridge the gap between Gaussian plume models and computationally-expensive
   large eddy simulations. We will begin by using a case study with idealized
   meteorology to demonstrate how input data for an APCEMM simulation is
